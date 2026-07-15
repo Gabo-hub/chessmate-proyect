@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.0/dist/phaser.min.js"></script>
+</head>
+<body>
+    <script>
+        const config = {
+            type: Phaser.AUTO,
+            width: 512,
+            height: 640,
+            backgroundColor: '#000000',
+            scene: {
+                preload: preload,
+                create: create
+            }
+        };
+
+        const game = new Phaser.Game(config);
+
+        function preload () {
+            this.load.tilemapTiledJSON('mapa', '/assets/mapas/inframundo.json');
+            this.load.image('tileset', '/assets/sprites/tilesets/tileset_inframundo.png');
+        }
+
+        function create () {
+            const map = this.make.tilemap({ key: 'mapa' });
+            
+            // Add some text so we know it's running
+            this.add.text(10, 10, 'Testing Tilemap...', { color: '#ffffff' }).setDepth(100);
+            
+            // Try to create the layer
+            try {
+                const tileset = map.addTilesetImage('tileset_inframundo', 'tileset');
+                if (!tileset) {
+                    this.add.text(10, 30, 'ERROR: addTilesetImage returned null!', { color: '#ff0000' }).setDepth(100);
+                    return;
+                }
+                
+                const layer = map.createLayer('Fondo', tileset, 0, 0);
+                if (!layer) {
+                    this.add.text(10, 50, 'ERROR: createLayer returned null!', { color: '#ff0000' }).setDepth(100);
+                } else {
+                    this.add.text(10, 50, 'SUCCESS: Layer created!', { color: '#00ff00' }).setDepth(100);
+                    layer.setDepth(10);
+                }
+            } catch (e) {
+                this.add.text(10, 30, 'EXCEPTION: ' + e.message, { color: '#ff0000' }).setDepth(100);
+            }
+        }
+    </script>
+</body>
+</html>

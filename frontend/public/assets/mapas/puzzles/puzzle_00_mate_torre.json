@@ -1,0 +1,92 @@
+{
+  "compressionlevel": -1,
+  "height": 10,
+  "width": 8,
+  "infinite": false,
+  "layers": [
+    {
+      "id": 1,
+      "name": "Fondo",
+      "type": "tilelayer",
+      "x": 0,
+      "y": 0,
+      "width": 8,
+      "height": 10,
+      "opacity": 1,
+      "visible": true,
+      "data": [0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,2,1,2,1,2,1,2,2,1,2,1,2,1,2,1,1,2,1,2,1,2,1,2,2,1,2,1,2,1,2,1,1,2,1,2,1,2,1,2,2,1,2,1,2,1,2,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0]
+    },
+    {
+      "id": 2,
+      "name": "TableroCasillas",
+      "type": "tilelayer",
+      "x": 0,
+      "y": 0,
+      "width": 8,
+      "height": 10,
+      "opacity": 1,
+      "visible": true,
+      "data": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,1,2,1,2,1,2,2,1,2,1,2,1,2,1,1,2,1,2,1,2,1,2,2,1,2,1,2,1,2,1,1,2,1,2,1,2,1,2,2,1,2,1,2,1,2,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    },
+    {
+      "id": 3,
+      "name": "EfectosEspeciales",
+      "type": "tilelayer",
+      "x": 0,
+      "y": 0,
+      "width": 8,
+      "height": 10,
+      "opacity": 0.6,
+      "visible": true,
+      "data": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,0,0,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+    },
+    {
+      "id": 4,
+      "name": "Piezas",
+      "type": "objectgroup",
+      "x": 0,
+      "y": 0,
+      "width": 8,
+      "height": 10,
+      "opacity": 1,
+      "visible": true,
+      "objects": [
+        {"id":1,"name":"Torre_B_0","type":"pieza","x":0,"y":128,"width":64,"height":64,"properties":[{"name":"pieza","type":"string","value":"T"},{"name":"equipo","type":"string","value":"blancas"},{"name":"fila","type":"int","value":0},{"name":"columna","type":"int","value":0}]},
+        {"id":5,"name":"Rey_B_4","type":"pieza","x":256,"y":128,"width":64,"height":64,"properties":[{"name":"pieza","type":"string","value":"R"},{"name":"equipo","type":"string","value":"blancas"},{"name":"fila","type":"int","value":0},{"name":"columna","type":"int","value":4}]},
+        {"id":8,"name":"Torre_B_7","type":"pieza","x":448,"y":128,"width":64,"height":64,"properties":[{"name":"pieza","type":"string","value":"T"},{"name":"equipo","type":"string","value":"blancas"},{"name":"fila","type":"int","value":0},{"name":"columna","type":"int","value":7}]},
+        {"id":21,"name":"Rey_N_4","type":"pieza","x":256,"y":384,"width":64,"height":64,"properties":[{"name":"pieza","type":"string","value":"R"},{"name":"equipo","type":"string","value":"negras"},{"name":"fila","type":"int","value":6},{"name":"columna","type":"int","value":4}]}
+      ]
+    }
+  ],
+  "tilesets": [
+    {
+      "firstgid": 1,
+      "name": "tileset_olimpo",
+      "image": "../sprites/tilesets/tileset_olimpo.png",
+      "imagewidth": 256,
+      "imageheight": 192,
+      "tilewidth": 64,
+      "tileheight": 64,
+      "tilecount": 12,
+      "columns": 4,
+      "tiles": [
+        {"id":0,"type":"casilla_clara","properties":[{"name":"color","type":"string","value":"#F5DEB3"}]},
+        {"id":1,"type":"casilla_oscura","properties":[{"name":"color","type":"string","value":"#8B4513"}]},
+        {"id":2,"type":"casilla_especial","properties":[{"name":"color","type":"string","value":"#DAA520"}]},
+        {"id":3,"type":"casilla_inicio","properties":[{"name":"color","type":"string","value":"#FFD700"}]}
+      ]
+    }
+  ],
+  "properties": [
+    {"name":"tema","type":"string","value":"olimpo"},
+    {"name":"es_puzzle","type":"bool","value":true},
+    {"name":"puzzle_id","type":"int","value":0},
+    {"name":"puzzle_nombre","type":"string","value":"Mate en 1 — Torre"},
+    {"name":"turno_blancas","type":"bool","value":true},
+    {"name":"pistas","type":"string","value":"La torre en a1 puede dar jaque mate en una jugada."}
+  ],
+  "tiledversion": "1.10",
+  "orientation": "orthogonal",
+  "renderorder": "right-down",
+  "type": "map"
+}

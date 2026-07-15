@@ -1,0 +1,100 @@
+{
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "inframundo.json": {
+            "scale": 1,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 442.5,
+                "y": 425.5
+            }
+        },
+        "inframundo.json#tileset_inframundo": {
+            "scaleInDock": 1
+        },
+        "inframundo.json#tileset_piezas": {
+            "scaleInDock": 1
+        },
+        "monte_olimpo.json": {
+            "expandedObjectLayers": [
+                4
+            ],
+            "scale": 1,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 351.5,
+                "y": 357.5
+            }
+        },
+        "monte_olimpo.json#tileset_monte": {
+            "scaleInDock": 1
+        },
+        "monte_olimpo.json#tileset_monte_olimpo": {
+            "scaleInDock": 1
+        },
+        "monte_olimpo.json#tileset_piezas": {
+            "scaleInDock": 1
+        },
+        "olimpo.json": {
+            "scale": 1,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 479.5,
+                "y": 368.5
+            }
+        },
+        "olimpo.json#tileset_olimpo": {
+            "scaleInDock": 1
+        },
+        "olimpo.json#tileset_piezas": {
+            "scaleInDock": 1
+        },
+        "puzzles/puzzle_00_mate_torre.json": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -0.5,
+                "y": -153.5
+            }
+        },
+        "puzzles/puzzle_00_mate_torre.json#tileset_olimpo": {
+            "scaleInDock": 1
+        },
+        "puzzles/puzzle_01_mate_reina.json": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -0.5,
+                "y": -0.5
+            }
+        },
+        "puzzles/puzzle_01_mate_reina.json#tileset_olimpo": {
+            "scaleInDock": 1
+        },
+        "puzzles/puzzle_02_mate_caballo.json": {
+            "scale": 1,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": -0.5,
+                "y": -0.5
+            }
+        },
+        "puzzles/puzzle_02_mate_caballo.json#tileset_olimpo": {
+            "scaleInDock": 1
+        }
+    },
+    "openFiles": [
+    ],
+    "project": "Ajedrez.tiled-project",
+    "recentFiles": [
+        "inframundo.json",
+        "olimpo.json",
+        "monte_olimpo.json",
+        "puzzles/puzzle_00_mate_torre.json"
+    ]
+}
