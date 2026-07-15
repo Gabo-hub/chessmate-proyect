@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+/* ============================================
+   CONFIGURACIÓN BASE Y TIPOGRAFÍAS
+   ============================================ */
+
+:root {
+  --color-primario: #ffd700;
+  --color-secundario: #c9a55a;
+  --color-fondo: #0a0e17;
+  --color-fondo-oscuro: #05070c;
+  
+  --font-header: 'Cinzel', Georgia, serif;
+  --font-ui: 'Outfit', sans-serif;
+}
+
+body {
+  font-family: var(--font-ui);
+  background-color: var(--color-fondo);
+  color: #f8fafc;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, .font-cinzel {
+  font-family: var(--font-header);
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   CLASES DE DISEÑO PREMIUM (GLASSMORPHISM)
+   ============================================ */
+
+.glass-panel {
+  background: rgba(10, 15, 30, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(218, 165, 32, 0.15);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}
+
+.glass-panel-dark {
+  background: rgba(5, 5, 10, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 68, 68, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(218, 165, 32, 0.3);
+  transform: translateY(-2px);
+  box-shadow: none;
+}
+
+/* ============================================
+   CONTROLES PERSONALIZADOS (RANGES / SLIDERS)
+   ============================================ */
+
+input[type="range"].custom-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  outline: none;
+  transition: background 0.3s;
+}
+
+input[type="range"].custom-slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  border-radius: 9999px;
+}
+
+input[type="range"].custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffd700;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  margin-top: -5px;
+  transition: transform 0.1s, background-color 0.2s;
+}
+
+input[type="range"].custom-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #fff;
+}
+
+/* ============================================
+   ANIMACIONES CUSTOM Y EFECTOS
+   ============================================ */
+
+@keyframes estrella {
+  0%, 100% { opacity: 0; transform: translateY(0) scale(0.5); }
+  50% { opacity: 0.6; transform: translateY(-30px) scale(1.2); }
+}
+
+@keyframes brillar {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.05); filter: brightness(1.2); }
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes cargarInicio {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes cargar {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* Giro lento para elementos decorativos como escudos */
+@keyframes giroLento {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.giro-lento {
+  animation: giroLento 40s linear infinite;
+}
+
