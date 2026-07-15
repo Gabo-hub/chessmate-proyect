@@ -93,11 +93,11 @@ export function ejecutarMovimiento(escena, filaOrigen, columnaOrigen, filaDestin
         efectoMovimiento(escena, centroOrigenX, centroOrigenY, centroDestinoX, centroDestinoY);
     }
 
-    
-    if (pieza === 'P' && filaDestino === 7) {
+    // Promoción: blancas (Dioses) llegan a fila 0 (arriba), negras (Titanes) llegan a fila 7 (abajo)
+    if (pieza === 'P' && filaDestino === 0) {
         escena.tablero[filaDestino][columnaDestino] = 'D';
         mostrarPieza(escena, filaDestino, columnaDestino, 'D');
-    } else if (pieza === 'p' && filaDestino === 0) {
+    } else if (pieza === 'p' && filaDestino === 7) {
         escena.tablero[filaDestino][columnaDestino] = 'd';
         mostrarPieza(escena, filaDestino, columnaDestino, 'd');
     }
