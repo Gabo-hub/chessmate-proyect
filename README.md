@@ -64,6 +64,10 @@ npm run dev
 
 Proyecto final — Lenguaje de Programación III
 
+- Gabriel Gómez 31106842
+- Greyfhersonn Alvarez 30102982
+- Gabriel Perdomo 30322533
+
 ## 📄 Licencia
 
 Proyecto académico — Todos los derechos reservados.

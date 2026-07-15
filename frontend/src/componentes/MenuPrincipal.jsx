@@ -239,16 +239,33 @@ export default function MenuPrincipal({
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
                                     {NIVELES_PUZZLES.map((puzzle, indice) => (
                                         <button key={indice} onClick={() => onIniciarPartida('puzzle', indice)}
-                                            className="p-4 bg-slate-950/45 text-left border border-slate-850 hover:border-amber-500/40 rounded-none cursor-pointer transition-all duration-300 hover:translate-y-[-2px] group">
-                                            <div className="flex justify-between items-center mb-1">
-                                                <div className="font-['Cinzel'] font-bold text-xs text-slate-200 group-hover:text-amber-400 transition-colors">
-                                                    {puzzle.nombre}
+                                            className="puzzle-card group relative overflow-hidden text-left cursor-pointer transition-all duration-300">
+                                            {/* Accent top border */}
+                                            <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-amber-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                            {/* Background glow on hover */}
+                                            <div className="absolute inset-0 bg-gradient-to-br from-amber-500/0 to-amber-900/0 group-hover:from-amber-500/5 group-hover:to-amber-900/10 transition-all duration-300" />
+                                            <div className="relative z-10 p-4">
+                                                <div className="flex justify-between items-start mb-2">
+                                                    <div className="flex items-center gap-2">
+                                                        <span className="text-lg leading-none">♟</span>
+                                                        <span className="font-['Cinzel'] font-bold text-xs text-slate-200 group-hover:text-amber-300 transition-colors duration-300">
+                                                            {puzzle.nombre}
+                                                        </span>
+                                                    </div>
+                                                    <span className="text-[9px] font-bold tracking-widest px-2 py-0.5 bg-amber-500/10 text-amber-500 border border-amber-500/25 uppercase font-['Cinzel']">
+                                                        #{indice + 1}
+                                                    </span>
                                                 </div>
-                                                <span className="text-[8px] font-bold tracking-wider px-1.5 py-0.5 rounded-none bg-amber-500/10 text-amber-400 border border-amber-500/20 uppercase">
-                                                    P{indice + 1}
-                                                </span>
+                                                <p className="text-[11px] text-slate-400 leading-relaxed font-['Outfit'] mb-2">{puzzle.descripcion}</p>
+                                                <div className="flex items-center gap-1.5 pt-2 border-t border-white/5">
+                                                    <span className="text-[9px] text-slate-500 uppercase tracking-wider font-['Cinzel']">Dificultad</span>
+                                                    <div className="flex gap-0.5">
+                                                        {[...Array(3)].map((_, i) => (
+                                                            <span key={i} className={`text-[10px] ${i < (indice + 1) ? 'text-amber-400' : 'text-slate-700'}`}>★</span>
+                                                        ))}
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <div className="text-[11px] text-slate-450 leading-relaxed font-normal font-['Outfit']">{puzzle.descripcion}</div>
                                         </button>
                                     ))}
                                 </div>

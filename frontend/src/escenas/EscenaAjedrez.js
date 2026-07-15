@@ -52,9 +52,9 @@ export default class EscenaAjedrez extends Phaser.Scene {
         this.modoJuego = datosIniciales?.modoJuego || 'partida';
         this.indicePuzzle = datosIniciales?.puzzleIdx || 0;
         this.ladoJugador = datosIniciales?.ladoJugador || 'dioses';
-        this.voltearTablero = this.ladoJugador === 'titanes';
+        this.voltearTablero = this.dificultadIA === 'humano' ? false : this.ladoJugador === 'titanes';
         this.iaEsDioses = this.voltearTablero;
-        this.iaActivada = this.dificultadIA !== 'humano' || this.modoJuego === 'puzzle' || this.voltearTablero;
+        this.iaActivada = this.dificultadIA !== 'humano' || this.modoJuego === 'puzzle';
 
         if (datosIniciales?.puzzleTablero) {
             this.tablero = clonarTablero(datosIniciales.puzzleTablero);
@@ -74,33 +74,14 @@ export default class EscenaAjedrez extends Phaser.Scene {
         escenaActualRef = this;
         if (this.game) this.game._escenaActual = this;
 
-        if (this.modoJuego !== 'puzzle' || !this.tablero.length) {
-            
-            const mapaTemporal = this.make.tilemap({ key: `tablero_${this.temaTablero}` });
-            const capaPiezas = mapaTemporal.getObjectLayer('Piezas');
-            
-            if (capaPiezas && capaPiezas.objects && capaPiezas.objects.length > 0) {
-                
-                this.tablero = Array(8).fill(null).map(() => Array(8).fill(null));
-                capaPiezas.objects.forEach(obj => {
-                    const props = obj.properties || [];
-                    const getProp = (name) => props.find(p => p.name === name)?.value;
-                    const pieza = getProp('pieza');
-                    const fila = getProp('fila');
-                    const columna = getProp('columna');
-                    const equipo = getProp('equipo');
-                    if (pieza && fila !== undefined && columna !== undefined) {
-                        this.tablero[fila][columna] = equipo === 'blancas' ? pieza.toUpperCase() : pieza.toLowerCase();
-                    }
-                });
-            } else {
-                this.tablero = POSICION_INICIAL.map(fila => [...fila]);
-            }
+        if (this.modoJuego !== 'puzzle' || !this.tablero || !this.tablero.length) {
+            this.tablero = POSICION_INICIAL.map(fila => [...fila]);
             this.turnoDioses = this.ladoJugador === 'dioses';
         }
 
-        if (this.voltearTablero && this.iaActivada && this.turnoDioses && this.modoJuego !== 'puzzle') {
-            this.turnoDioses = true;
+        // En modo IA con Titanes: la IA juega primero como Dioses (blancas)
+        if (this.voltearTablero && this.iaActivada && this.modoJuego !== 'puzzle') {
+            this.turnoDioses = true; // siempre empiezan las blancas (Dioses)
         }
 
         this.estadoPartida = 'cargando';
@@ -109,8 +90,8 @@ export default class EscenaAjedrez extends Phaser.Scene {
         this.casillasTablero = [];
         this.elementosPiezas = [];
         this.indicadoresMovimiento = [];
-        this.posicionReyBlanco = { fila: 0, columna: 4 };
-        this.posicionReyNegro = { fila: 7, columna: 4 };
+        this.posicionReyBlanco = { fila: 7, columna: 4 };
+        this.posicionReyNegro = { fila: 0, columna: 4 };
 
         this.cameras.main.setBackgroundColor(TEMAS_TABLERO[this.temaTablero].fondo);
 

@@ -47,7 +47,7 @@ export function calcularMovimientosPosibles(tablero, fila, columna) {
 
     switch (tipoPieza) {
         case 'P': {
-            const direccion = esDios ? 1 : -1;
+            const direccion = esDios ? -1 : 1;
             const filaInicial = esDios ? 6 : 1;
             const filaAdelante = fila + direccion;
             if (filaAdelante >= 0 && filaAdelante <= MAX_INDICE && estaLibre(filaAdelante, columna)) {
