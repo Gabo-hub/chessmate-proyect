@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <radialGradient id="abyss" cx="50%" cy="50%" r="75%" fx="50%" fy="70%">
+      <stop offset="0%" stop-color="#140a0a" />
+      <stop offset="60%" stop-color="#0a0505" />
+      <stop offset="100%" stop-color="#030101" />
+    </radialGradient>
+    <!-- Soft volcanic glow -->
+    <radialGradient id="magma" cx="50%" cy="80%" r="70%">
+      <stop offset="0%" stop-color="#801a1a" stop-opacity="0.15" />
+      <stop offset="50%" stop-color="#4d0f0f" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#030101" stop-opacity="0" />
+    </radialGradient>
+    <!-- Greek meander border pattern in dark crimson -->
+    <pattern id="greek-border-dark" width="40" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 0 10 L 15 10 L 15 5 L 25 5 L 25 15 L 10 15 L 10 0 L 30 0 L 30 20 L 5 20 L 5 10" 
+            fill="none" stroke="#FF4444" stroke-width="1.5" stroke-opacity="0.14" />
+    </pattern>
+  </defs>
+  <!-- Background base -->
+  <rect width="1920" height="1080" fill="url(#abyss)" />
+  <rect width="1920" height="1080" fill="url(#magma)" />
+  
+  <!-- Greek border pattern along top and bottom -->
+  <rect x="0" y="20" width="1920" height="20" fill="url(#greek-border-dark)" />
+  <rect x="0" y="1040" width="1920" height="20" fill="url(#greek-border-dark)" />
+
+  <!-- Volcanic rift/tectonic fissure lines -->
+  <g stroke="rgba(255,68,68,0.04)" stroke-width="1.5" fill="none">
+    <!-- Left volcanic lines -->
+    <path d="M 0 300 L 300 450 L 200 650 L 400 800 L 100 1080" />
+    <path d="M 50 150 L 150 350 L 80 550 L 250 850" stroke-width="0.8" stroke-opacity="0.02" />
+    
+    <!-- Right volcanic lines -->
+    <path d="M 1920 200 L 1650 380 L 1750 600 L 1550 850 L 1800 1080" />
+    <path d="M 1850 400 L 1720 580 L 1800 750" stroke-width="0.8" stroke-opacity="0.02" />
+  </g>
+
+  <!-- Central dark portal medallion -->
+  <circle cx="960" cy="540" r="380" fill="none" stroke="#FF4444" stroke-width="1" stroke-opacity="0.06" stroke-dasharray="4 8" />
+  <circle cx="960" cy="540" r="360" fill="none" stroke="#FF4444" stroke-width="2" stroke-opacity="0.04" />
+  
+  <!-- Volcanic ember dots -->
+  <g fill="rgba(239,68,68,0.18)">
+    <circle cx="350" cy="250" r="2" />
+    <circle cx="280" cy="400" r="1.5" />
+    <circle cx="450" cy="700" r="2.5" />
+    <circle cx="150" cy="850" r="1" />
+    <circle cx="1600" cy="300" r="2.5" />
+    <circle cx="1780" cy="520" r="1.5" />
+    <circle cx="1520" cy="740" r="2" />
+    <circle cx="1700" cy="900" r="1" />
+  </g>
+</svg>
