@@ -53,19 +53,22 @@ export function dibujarTablero(escena) {
     graficosBorde.strokeRect(0, ALTURA_BARRA, 8 * TAM_CASILLA, 8 * TAM_CASILLA);
 
     
+    escena.textosBordes = [];
     const letrasColumnas = 'ABCDEFGH';
     for (let col = 0; col < 8; col++) {
-        escena.add.text(col * TAM_CASILLA + TAM_CASILLA / 2, 8 * TAM_CASILLA + ALTURA_BARRA + 14, letrasColumnas[col], {
+        const txt = escena.add.text(col * TAM_CASILLA + TAM_CASILLA / 2, 8 * TAM_CASILLA + ALTURA_BARRA + 14, letrasColumnas[col], {
             fontSize: '14px', color: '#DAA520', fontFamily: 'Arial'
         }).setOrigin(0.5);
+        escena.textosBordes.push(txt);
     }
 
     
     for (let fila = 0; fila < 8; fila++) {
         const numeroFila = escena.voltearTablero ? (fila + 1) : (8 - fila);
-        escena.add.text(-12, escena.filaPantalla(fila) * TAM_CASILLA + TAM_CASILLA / 2 + ALTURA_BARRA, `${numeroFila}`, {
+        const txt = escena.add.text(-12, escena.filaPantalla(fila) * TAM_CASILLA + TAM_CASILLA / 2 + ALTURA_BARRA, `${numeroFila}`, {
             fontSize: '14px', color: '#DAA520', fontFamily: 'Arial'
         }).setOrigin(0.5);
+        escena.textosBordes.push(txt);
     }
 }
 

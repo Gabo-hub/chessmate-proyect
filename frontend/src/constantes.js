@@ -9,31 +9,31 @@ export const ANCHO_TABLERO = TAM_CASILLA * 8;
 export const ALTO_TABLERO = ALTURA_BARRA + TAM_CASILLA * 8 + 40;
 
 export const POSICION_INICIAL = [
-    ['T', 'C', 'A', 'D', 'R', 'A', 'C', 'T'],  
-    ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],  
+    ['t', 'c', 'a', 'd', 'r', 'a', 'c', 't'],
+    ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],
     [null, null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null, null],
     [null, null, null, null, null, null, null, null],
-    ['p', 'p', 'p', 'p', 'p', 'p', 'p', 'p'],  
-    ['t', 'c', 'a', 'd', 'r', 'a', 'c', 't'],  
+    ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'],
+    ['T', 'C', 'A', 'D', 'R', 'A', 'C', 'T'],
 ];
 
 export const SIMBOLOS_PIEZAS = {
-    
-    R: '♔',  
-    D: '♕',  
-    T: '♖',  
-    A: '♗',  
-    C: '♘',  
-    P: '♙',  
-    
-    r: '♚',  
-    d: '♛',  
-    t: '♜',  
-    a: '♝',  
-    c: '♞',  
-    p: '♟',  
+
+    R: '♔',
+    D: '♕',
+    T: '♖',
+    A: '♗',
+    C: '♘',
+    P: '♙',
+
+    r: '♚',
+    d: '♛',
+    t: '♜',
+    a: '♝',
+    c: '♞',
+    p: '♟',
 };
 
 export const COLORES_PIEZAS = {
@@ -52,41 +52,41 @@ export const COLORES_PIEZAS = {
 };
 
 export const VALOR_PIEZAS = {
-    p: 100,   
-    c: 320,   
-    a: 330,   
-    t: 500,   
-    d: 900,   
-    r: 20000, 
+    p: 100,
+    c: 320,
+    a: 330,
+    t: 500,
+    d: 900,
+    r: 20000,
 };
 
 export const VALOR_POSICION = [
-    [0, 0, 0, 0, 0, 0, 0, 0],      
-    [50, 50, 50, 50, 50, 50, 50, 50], 
-    [10, 10, 20, 30, 30, 20, 10, 10], 
-    [5, 5, 10, 25, 25, 10, 5, 5],    
-    [0, 0, 0, 20, 20, 0, 0, 0],      
-    [5, -5, -10, 0, 0, -10, -5, 5],  
-    [5, 10, 10, -20, -20, 10, 10, 5], 
-    [0, 0, 0, 0, 0, 0, 0, 0],       
+    [0, 0, 0, 0, 0, 0, 0, 0],
+    [50, 50, 50, 50, 50, 50, 50, 50],
+    [10, 10, 20, 30, 30, 20, 10, 10],
+    [5, 5, 10, 25, 25, 10, 5, 5],
+    [0, 0, 0, 20, 20, 0, 0, 0],
+    [5, -5, -10, 0, 0, -10, -5, 5],
+    [5, 10, 10, -20, -20, 10, 10, 5],
+    [0, 0, 0, 0, 0, 0, 0, 0],
 ];
 
 export const TEMAS_TABLERO = {
     olimpo: {
-        clara: 0xF5DEB3,      
-        oscura: 0x8B4513,     
-        fondo: '#1a1a2e',     
-        nombre: 'Olimpo',     
+        clara: 0xF5DEB3,
+        oscura: 0x8B4513,
+        fondo: '#1a1a2e',
+        nombre: 'Olimpo',
     },
     inframundo: {
-        clara: 0x5A5A5A,      
-        oscura: 0x2A0A0A,     
+        clara: 0x5A5A5A,
+        oscura: 0x2A0A0A,
         fondo: '#1a0a0a',
         nombre: 'Inframundo',
     },
     monte_olimpo: {
-        clara: 0xA8D5A2,      
-        oscura: 0x3B6B3B,     
+        clara: 0xA8D5A2,
+        oscura: 0x3B6B3B,
         fondo: '#0a1a0a',
         nombre: 'Monte Olimpo',
     },
@@ -98,14 +98,14 @@ export const IMAGENES_FONDO_LADO = {
 };
 
 export const RUTAS_SPRITES = {
-    
+
     R: 'sprites/piezas/rey_blanco.png',
     D: 'sprites/piezas/reina_blanca.png',
     T: 'sprites/piezas/torre_blanca.png',
     A: 'sprites/piezas/alfil_blanco.png',
     C: 'sprites/piezas/caballo_blanco.png',
     P: 'sprites/piezas/peon_blanco.png',
-    
+
     r: 'sprites/piezas/rey_negro.png',
     d: 'sprites/piezas/reina_negra.png',
     t: 'sprites/piezas/torre_negra.png',
