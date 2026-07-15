@@ -256,4 +256,37 @@ export default class EscenaAjedrez extends Phaser.Scene {
         const ganador = this.turnoDioses ? 'Los Titanes' : 'Los Dioses';
         mostrarPantallaFinal(this, 'JAQUE MATE', ganador);
     }
+
+    rotarTablero() {
+        if (this.modoJuego !== 'partida' || this.iaActivada) return; // Solo rota en modo 2 Jugadores local (sin IA)
+
+        const anguloDestino = this.turnoDioses ? 0 : Math.PI;
+
+        // 1. Rotar la Cámara principal
+        this.tweens.add({
+            targets: this.cameras.main,
+            rotation: anguloDestino,
+            duration: 600,
+            ease: 'Cubic.easeInOut'
+        });
+
+        // 2. Contrarrestar la rotación en los elementos interactivos o legibles
+        const elementosInversos = [
+            ...this.elementosPiezas.flat().filter(p => p),
+            this.textoTurno,
+            this.textoJaque,
+            ...(this.textosBordes || [])
+        ];
+
+        elementosInversos.forEach(el => {
+            if (el) {
+                this.tweens.add({
+                    targets: el,
+                    rotation: anguloDestino,
+                    duration: 600,
+                    ease: 'Cubic.easeInOut'
+                });
+            }
+        });
+    }
 }

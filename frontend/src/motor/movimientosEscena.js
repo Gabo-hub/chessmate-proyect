@@ -122,6 +122,11 @@ export function ejecutarMovimiento(escena, filaOrigen, columnaOrigen, filaDestin
     if (escena.estadoPartida === 'jugando' && escena.iaActivada && esTurnoIA) {
         escena.time.delayedCall(400, () => escena.jugarTurnoIA());
     }
+    
+    // Iniciar rotación del tablero si estamos en modo local 2 jugadores
+    if (escena.rotarTablero) {
+        escena.rotarTablero();
+    }
 }
 
 export function aplicarMovimientoRemoto(escena, uci) {
@@ -159,8 +164,20 @@ export function aplicarMovimientoRemoto(escena, uci) {
 
 export function manejarClicJuego(escena, coordenadaX, coordenadaY) {
     if (escena.estadoPartida !== 'jugando') return;
-    const columna = Math.floor(coordenadaX / TAM_CASILLA);
-    const filaPant = Math.floor((coordenadaY - ALTURA_BARRA) / TAM_CASILLA);
+
+    let clicX = coordenadaX;
+    let clicY = coordenadaY;
+
+    // Si la cámara está rotada 180 grados, invertimos las coordenadas del clic manualmente
+    if (escena.cameras.main.rotation > 0) { // Math.PI > 0
+        const centroX = (8 * TAM_CASILLA) / 2;
+        const centroY = ALTURA_BARRA + (8 * TAM_CASILLA) / 2;
+        clicX = (centroX * 2) - coordenadaX;
+        clicY = (centroY * 2) - coordenadaY;
+    }
+
+    const columna = Math.floor(clicX / TAM_CASILLA);
+    const filaPant = Math.floor((clicY - ALTURA_BARRA) / TAM_CASILLA);
     if (filaPant < 0 || filaPant > 7 || columna < 0 || columna > 7) return;
     const fila = escena.filaLogica(filaPant);
 
